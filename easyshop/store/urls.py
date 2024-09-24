@@ -19,5 +19,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('', views.store, name='store'),
+    path('buscket/', views.buscket, name='buscket'),
+    path('checkout/', views.checkout, name='checkout'),
 ]
