@@ -23,6 +23,4 @@ urlpatterns = [
     path('', views.store, name='store'),
     path('buscket/', views.buscket, name='buscket'),
     path('checkout/', views.checkout, name='checkout'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('signup/', views.signup, name="signup")
 ]
