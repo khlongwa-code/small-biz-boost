@@ -40,6 +40,27 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.id)
+    
+    @property
+    def delivery(self):
+        delivery = False
+        order_items = self.orderitem_set.all() #will be used when implementing a logic of selling other items that may be digital
+
+        return delivery
+    
+    @property
+    def cart_total(self):
+        order_items = self.orderitem_set.all()
+        total = sum([item.get_total for item in order_items])
+
+        return total
+    
+    @property
+    def cart_items(self):
+        order_items = self.orderitem_set.all()
+        total = sum([item.quantity for item in order_items])
+
+        return total
 
 
 class OrderItem(models.Model):
